@@ -1,0 +1,13 @@
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.exe
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.deps.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.runtimeconfig.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.runtimeconfig.dev.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.pdb
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.AssemblyInfoInputs.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.AssemblyInfo.cs
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.csproj.CoreCompileInputs.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.pdb
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.csprojAssemblyReference.cache

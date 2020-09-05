@@ -1,0 +1,13 @@
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.exe
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.deps.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.runtimeconfig.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.runtimeconfig.dev.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.pdb
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.csprojAssemblyReference.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.AssemblyInfoInputs.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.AssemblyInfo.cs
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.csproj.CoreCompileInputs.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.pdb
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.genruntimeconfig.cache
