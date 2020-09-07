@@ -6,6 +6,7 @@ namespace Game
 {
     class Board
     {
+
         private int[][] board;
         public static int[][] DEFAULT_POSITION =  { new int[] { 1, 3, 4 }, new int[] { 1, 3, 5 }, new int[] { 1, 3, 6 }, //Gold player escorts
                                                     new int[] { 1, 4, 3 }, new int[] { 1, 5, 3 }, new int[] { 1, 6, 3 },
@@ -36,6 +37,54 @@ namespace Game
                 int value = piece[0];
                 board[row][column] = value;
             }
+        }
+
+        public void MakeMove(int x1, int y1, int x2, int y2)
+        {
+            if (!CheckLegalMove(x1, y1, x2, y2)) {
+                throw new Exception($"Illegal Move (X{x1 + 1}), try again!");
+            }
+
+            board[x2][y2] = board[x1][y1];
+            board[x1][y1] = 0;
+
+        }
+
+        public bool CheckLegalMove(int x1, int y1, int x2, int y2)
+        {
+            //check if piece belongs to active player
+            //check if there is a piece on the origin location
+            //check if there is either no piece on the target location or
+            //check if there is a opposing capturable position is on target location and enough actions for capture remain
+            //check if the piece has already been moved (might remember the last target position and check if the new source position is the same)
+            //check for no move (origin = source)
+
+            //or just make a legal move dictionary that gets used by the search already.
+            return true;
+        }
+
+        public (int, int) ParseLocationString(string input)
+        {
+            int x, y;
+            var inputArray = input.ToCharArray();
+
+            if (inputArray.Length != 2)
+            {
+                throw new Exception($"Invalid move format: {input}");
+            }
+
+            x = (int)(char)(inputArray[0]);
+            x -= 97;
+            y = (int)Char.GetNumericValue(inputArray[1]);
+            y -= 1;
+            return (x, y);
+        }
+
+        public string GetLocationString(int x, int y)
+        {
+            x += 97;
+            y +=  1;
+            return $"{Convert.ToChar(x)}{y.ToString()}";
         }
 
         public string GetString()
