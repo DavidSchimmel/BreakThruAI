@@ -8,16 +8,18 @@ namespace Game
     {
 
         private int[][] board;
-        public static int[][] DEFAULT_POSITION =  { new int[] { 1, 3, 4 }, new int[] { 1, 3, 5 }, new int[] { 1, 3, 6 }, //Gold player escorts
-                                                    new int[] { 1, 4, 3 }, new int[] { 1, 5, 3 }, new int[] { 1, 6, 3 },
-                                                    new int[] { 1, 7, 4 }, new int[] { 1, 7, 5 }, new int[] { 1, 7, 6 },
-                                                    new int[] { 1, 4, 7 }, new int[] { 1, 5, 7 }, new int[] { 1, 6, 7 },
-                                                    new int[] { 3, 5, 5 }, //flagship
-                                                    new int[] { 2, 1, 3 }, new int[] { 2, 1, 4 }, new int[] { 2, 1, 5 }, new int[] { 2, 1, 6 }, new int[] { 2, 1, 7 }, //silver player pieces
-                                                    new int[] { 2, 3, 1 }, new int[] { 2, 4, 1 }, new int[] { 2, 5, 1 }, new int[] { 2, 6, 1 }, new int[] { 2, 7, 1 },
-                                                    new int[] { 2, 9, 3 }, new int[] { 2, 9, 4 }, new int[] { 2, 9, 5 }, new int[] { 2, 9, 6 }, new int[] { 2, 9, 7 },
-                                                    new int[] { 2, 3, 9 }, new int[] { 2, 4, 9 }, new int[] { 2, 5, 9 }, new int[] { 2, 6, 9 }, new int[] { 2, 7, 9 }
+        public static int[][] DEFAULT_POSITION  =  { new int[] { 1, 3, 4 }, new int[] { 1, 3, 5 }, new int[] { 1, 3, 6 }, //Gold player escorts
+                                                     new int[] { 1, 4, 3 }, new int[] { 1, 5, 3 }, new int[] { 1, 6, 3 },
+                                                     new int[] { 1, 7, 4 }, new int[] { 1, 7, 5 }, new int[] { 1, 7, 6 },
+                                                     new int[] { 1, 4, 7 }, new int[] { 1, 5, 7 }, new int[] { 1, 6, 7 },
+                                                     new int[] { 3, 5, 5 }, //flagship
+                                                     new int[] { 2, 1, 3 }, new int[] { 2, 1, 4 }, new int[] { 2, 1, 5 }, new int[] { 2, 1, 6 }, new int[] { 2, 1, 7 }, //silver player pieces
+                                                     new int[] { 2, 3, 1 }, new int[] { 2, 4, 1 }, new int[] { 2, 5, 1 }, new int[] { 2, 6, 1 }, new int[] { 2, 7, 1 },
+                                                     new int[] { 2, 9, 3 }, new int[] { 2, 9, 4 }, new int[] { 2, 9, 5 }, new int[] { 2, 9, 6 }, new int[] { 2, 9, 7 },
+                                                     new int[] { 2, 3, 9 }, new int[] { 2, 4, 9 }, new int[] { 2, 5, 9 }, new int[] { 2, 6, 9 }, new int[] { 2, 7, 9 }
                                                   };
+        private static char[] BOARD_ICONS = { '.', 'G', 'S', 'F' };
+        private int activePlayer = 0; // active player 0 is gold, 1 is silver
 
         public Board(int width, int height)
         {
@@ -80,6 +82,74 @@ namespace Game
             return (x, y);
         }
 
+        public List<List<int>> GenerateLegalMoves()
+        {
+            List<List<int>> legalMoves = new List<List<int>>();
+            
+            if (activePlayer == 0) //  gold's turn
+            {
+
+            }
+            else if (activePlayer == 1) // silber's turn
+            {
+
+            }
+            return legalMoves;
+        }
+
+        private List<int> AddPossibleCaptures(int x, int y)
+        {
+            List<int> possibleCaptures = new List<int>();
+
+            if (x-1 >= 0 && y-1 >= 0)
+            {
+                if (checkHostileTarget(x, y, x-1, y-1))
+                {
+                    possibleCaptures.Add(x - 1);
+                    possibleCaptures.Add(y - 1);
+                }
+            }
+
+            if (x - 1 >= 0 && y + 1 < board[0].Length)
+            {
+                if (checkHostileTarget(x, y, x - 1, y + 1))
+                {
+                    possibleCaptures.Add(x - 1);
+                    possibleCaptures.Add(y + 1);
+                }
+            }
+
+            if (x + 1 < board[0].Length && y - 1 >= 0)
+            {
+                if (checkHostileTarget(x, y, x + 1, y - 1))
+                {
+                    possibleCaptures.Add(x + 1);
+                    possibleCaptures.Add(y - 1);
+                }
+            }
+
+            if (x + 1 < board[0].Length && y + 1 < board[0].Length)
+            {
+                if (checkHostileTarget(x, y, x + 1, y + 1))
+                {
+                    possibleCaptures.Add(x + 1);
+                    possibleCaptures.Add(y + 1);
+                }
+            }
+
+            return possibleCaptures;
+        }
+
+        private bool checkHostileTarget(int x1, int y1, int x2, int y2)
+        {
+
+        }
+
+        private List<int> AddPossibleMovements()
+        {
+            List<int> possibleMovements = new List<int>();
+        }
+
         public string GetLocationString(int x, int y)
         {
             x += 97;
@@ -89,21 +159,31 @@ namespace Game
 
         public string GetString()
         {
-            string representation = " ";
-            for (int i = 0; i < board[0].Length; i++)
-            {
-                representation += Convert.ToChar(i + 97);
-            }
-            representation += "\r\n";
+            string representation = "\r\n";
 
-            foreach (var row in board)
+            for (int i = board.Length -1; i >= 0; --i)
             {
-                representation += (Array.IndexOf(board, row) +1).ToString();
-                foreach (var tile in row)
+                representation += $"{(i+1):00}|";
+
+                string rowString = "";
+                foreach (var tile in board[i])
                 {
                     representation += tile;
                 }
-                representation += "\r\n";
+                rowString = rowString.Replace('0', BOARD_ICONS[0]).Replace('1', BOARD_ICONS[1]).Replace('2', BOARD_ICONS[2]).Replace('3', BOARD_ICONS[3]);
+                representation += rowString + "\r\n";
+            }
+
+            representation += "--+";
+            for (int i = 0; i < board[0].Length; i++)
+            {
+                representation += "-";
+            }
+
+            representation += "\r\n  |";
+            for (int i = 0; i < board[0].Length; i++)
+            {
+                representation += Convert.ToChar(i + 97);
             }
 
             return representation;
