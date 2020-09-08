@@ -45,8 +45,8 @@ namespace Game
                 throw new Exception($"Illegal Move (X{x1 + 1}), try again!");
             }
 
-            board[x2][y2] = board[x1][y1];
-            board[x1][y1] = 0;
+            board[y2][x2] = board[y1][x1];
+            board[y1][x1] = 0;
 
         }
 
@@ -89,9 +89,16 @@ namespace Game
 
         public string GetString()
         {
-            string representation = "";
+            string representation = " ";
+            for (int i = 0; i < board[0].Length; i++)
+            {
+                representation += Convert.ToChar(i + 97);
+            }
+            representation += "\r\n";
+
             foreach (var row in board)
             {
+                representation += (Array.IndexOf(board, row) +1).ToString();
                 foreach (var tile in row)
                 {
                     representation += tile;
