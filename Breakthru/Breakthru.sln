@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breakthru", "Breakthru\Breakthru.csproj", "{92E40EEE-B640-407E-85FD-85CF204D5D28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Breakthru", "Breakthru\Breakthru.csproj", "{92E40EEE-B640-407E-85FD-85CF204D5D28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{A42C4385-F15F-4D02-AA54-9E79F3B65D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{A42C4385-F15F-4D02-AA54-9E79F3B65D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Board", "Board\Board.csproj", "{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A42C4385-F15F-4D02-AA54-9E79F3B65D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42C4385-F15F-4D02-AA54-9E79F3B65D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42C4385-F15F-4D02-AA54-9E79F3B65D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

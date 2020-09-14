@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    class Board
+    class BoardOld
     {
 
         private int[][] board;
@@ -21,7 +21,7 @@ namespace Game
         private static char[] BOARD_ICONS = { '.', 'G', 'S', 'F' };
         private int activePlayer = 0; // active player 0 is gold, 1 is silver
 
-        public Board(int width, int height)
+        public BoardOld(int width, int height)
         {
             board = new int[height][];
             for (int i=0; i<board.Length; i++)
@@ -90,14 +90,14 @@ namespace Game
             {
 
             }
-            else if (activePlayer == 1) // silber's turn
+            else if (activePlayer == 1) // silver's turn
             {
 
             }
             return legalMoves;
         }
 
-        private List<int> AddPossibleCaptures(int x, int y)
+        /*private List<int> AddPossibleCaptures(int x, int y)
         {
             List<int> possibleCaptures = new List<int>();
 
@@ -138,9 +138,9 @@ namespace Game
             }
 
             return possibleCaptures;
-        }
+        }*/
 
-        private bool checkHostileTarget(int x1, int y1, int x2, int y2)
+        /*private bool checkHostileTarget(int x1, int y1, int x2, int y2)
         {
 
         }
@@ -148,7 +148,7 @@ namespace Game
         private List<int> AddPossibleMovements()
         {
             List<int> possibleMovements = new List<int>();
-        }
+        }*/
 
         public string GetLocationString(int x, int y)
         {

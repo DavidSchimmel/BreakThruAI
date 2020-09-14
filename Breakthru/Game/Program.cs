@@ -6,7 +6,7 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            Board board = new Board(11, 11);
+            BoardOld board = new BoardOld(11, 11);
             board.InitializeDefault();
             string input = "";
 

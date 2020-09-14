@@ -1,4 +1,5 @@
 ﻿using System;
+using Board;
 
 namespace Breakthru
 {
@@ -6,7 +7,11 @@ namespace Breakthru
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Board.Board board = new Board.Board(11, 11);
+            board.Initialize();
+            board.Print();
+            
+            Console.WriteLine("END!");
         }
     }
 }

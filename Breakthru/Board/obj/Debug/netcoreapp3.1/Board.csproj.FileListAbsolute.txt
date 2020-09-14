@@ -1,0 +1,8 @@
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.AssemblyInfoInputs.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.AssemblyInfo.cs
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.csproj.CoreCompileInputs.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\bin\Debug\netcoreapp3.1\Board.deps.json
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\bin\Debug\netcoreapp3.1\Board.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\bin\Debug\netcoreapp3.1\Board.pdb
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.pdb

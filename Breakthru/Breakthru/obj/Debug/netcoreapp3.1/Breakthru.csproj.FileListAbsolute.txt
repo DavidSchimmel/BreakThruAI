@@ -11,3 +11,6 @@ C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.dll
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.pdb
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.genruntimeconfig.cache
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Board.dll
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Board.pdb
+C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.csproj.CopyComplete

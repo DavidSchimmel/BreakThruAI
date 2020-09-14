@@ -10,4 +10,3 @@ C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\G
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.dll
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.pdb
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache
-C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.csprojAssemblyReference.cache
