@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {}
+    "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {}
   },
   "projects": {
-    "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
+    "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
+        "projectUniqueName": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
         "projectName": "Board",
-        "projectPath": "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
-        "packagesPath": "C:\\Users\\David Schimmel\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Board\\obj\\",
+        "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
+        "packagesPath": "C:\\Users\\homie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\David Schimmel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\homie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

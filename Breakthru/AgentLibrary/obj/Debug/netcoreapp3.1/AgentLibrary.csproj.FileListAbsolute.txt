@@ -1,0 +1,12 @@
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\bin\Debug\netcoreapp3.1\AgentLibrary.deps.json
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\bin\Debug\netcoreapp3.1\AgentLibrary.dll
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\bin\Debug\netcoreapp3.1\AgentLibrary.pdb
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\bin\Debug\netcoreapp3.1\Board.dll
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\bin\Debug\netcoreapp3.1\Board.pdb
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.csprojAssemblyReference.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.AssemblyInfoInputs.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.AssemblyInfo.cs
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.csproj.CoreCompileInputs.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.csproj.CopyComplete
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.dll
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\AgentLibrary\obj\Debug\netcoreapp3.1\AgentLibrary.pdb

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "AgentLibrary/1.0.0": {
+        "dependencies": {
+          "Board": "1.0.0"
+        },
+        "runtime": {
+          "AgentLibrary.dll": {}
+        }
+      },
+      "Board/1.0.0": {
+        "runtime": {
+          "Board.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AgentLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Board/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

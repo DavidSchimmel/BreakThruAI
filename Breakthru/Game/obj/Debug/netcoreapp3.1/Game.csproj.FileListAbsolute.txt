@@ -10,3 +10,15 @@ C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\G
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.dll
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.pdb
 C:\projects\MaastrichtRepos\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.exe
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.deps.json
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.runtimeconfig.json
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.runtimeconfig.dev.json
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.dll
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\bin\Debug\netcoreapp3.1\Game.pdb
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.AssemblyInfoInputs.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.AssemblyInfo.cs
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.csproj.CoreCompileInputs.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.dll
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.pdb
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache

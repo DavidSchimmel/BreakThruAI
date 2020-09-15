@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Breakthru", "Breakthru\Brea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{A42C4385-F15F-4D02-AA54-9E79F3B65D34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Board", "Board\Board.csproj", "{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Board", "Board\Board.csproj", "{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{6F2FBCAC-06F7-4FA5-B561-0AAF841DBD01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentLibrary", "AgentLibrary\AgentLibrary.csproj", "{7D39BD6C-3F2C-4F11-A0D3-699E750D43F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52BEAEAA-4ED6-422C-8814-4320D15BE6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F2FBCAC-06F7-4FA5-B561-0AAF841DBD01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2FBCAC-06F7-4FA5-B561-0AAF841DBD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2FBCAC-06F7-4FA5-B561-0AAF841DBD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2FBCAC-06F7-4FA5-B561-0AAF841DBD01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D39BD6C-3F2C-4F11-A0D3-699E750D43F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D39BD6C-3F2C-4F11-A0D3-699E750D43F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D39BD6C-3F2C-4F11-A0D3-699E750D43F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D39BD6C-3F2C-4F11-A0D3-699E750D43F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

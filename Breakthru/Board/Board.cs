@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Board
 {
     public class Board
     {
-        private static char[] BOARD_ICONS = { '.', 'G', 'S', 'F' };
+        private static char[] BOARD_ICONS = { '.', 'G', 'S', ' ', 'F' };
         private static int[] DEFAULT_POSITION = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                  0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -18,6 +19,9 @@ namespace Board
                                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         int activePlayer;
+        int flagShipPos;
+        int turnCounter;
+
         //int[] position;
         int[] board;
         int width;
@@ -53,6 +57,13 @@ namespace Board
             }   
         }
 
+        public List<(int, int)> GetLegalMoves()
+        {
+            List<(int, int)> legalMoves = new List<(int, int)>();
+
+            return legalMoves;
+        }
+
         public string GetString()
         {
             string representation = "\r\n";
@@ -64,10 +75,10 @@ namespace Board
                 string rowString = "";
                 for (int j = 0; j<width; j++)
                 {
-                    representation += board[i+j];
+                    rowString += board[i+j];
                 }
 
-                rowString = rowString.Replace('0', BOARD_ICONS[0]).Replace('1', BOARD_ICONS[1]).Replace('2', BOARD_ICONS[2]).Replace('3', BOARD_ICONS[3]);
+                rowString = rowString.Replace('0', BOARD_ICONS[0]).Replace('1', BOARD_ICONS[1]).Replace('2', BOARD_ICONS[2]).Replace('4', BOARD_ICONS[4]);
                 representation += rowString + "\r\n";
             }
 

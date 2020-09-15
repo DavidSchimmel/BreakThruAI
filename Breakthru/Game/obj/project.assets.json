@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\David Schimmel\\.nuget\\packages\\": {},
+    "C:\\Users\\homie\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Game\\Game.csproj",
+      "projectUniqueName": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Game\\Game.csproj",
       "projectName": "Game",
-      "projectPath": "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Game\\Game.csproj",
-      "packagesPath": "C:\\Users\\David Schimmel\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\MaastrichtRepos\\BreakThruAI\\Breakthru\\Game\\obj\\",
+      "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Game\\Game.csproj",
+      "packagesPath": "C:\\Users\\homie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Game\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\David Schimmel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\homie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
