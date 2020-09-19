@@ -8,8 +8,10 @@ namespace AgentLibrary
     {
         public (int, int) GetNextMove(Board.Board board)
         {
-            var positions = board.GetLegalMoves();
+            Random random = new Random();
+            var legalMoves = board.GetLegalMoves();
 
+            int randomIndex = random.Next(legalMoves.Count);
             throw new NotImplementedException();
         }
     }
