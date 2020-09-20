@@ -30,3 +30,5 @@ C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcore
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.dll
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.pdb
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.genruntimeconfig.cache
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\AgentLibrary.dll
+C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\AgentLibrary.pdb

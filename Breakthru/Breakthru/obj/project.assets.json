@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AgentLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Board": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AgentLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AgentLibrary.dll": {}
+        }
+      },
       "Board/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "AgentLibrary/1.0.0": {
+      "type": "project",
+      "path": "../AgentLibrary/AgentLibrary.csproj",
+      "msbuildProject": "../AgentLibrary/AgentLibrary.csproj"
+    },
     "Board/1.0.0": {
       "type": "project",
       "path": "../Board/Board.csproj",
@@ -23,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AgentLibrary >= 1.0.0",
       "Board >= 1.0.0"
     ]
   },
@@ -56,6 +75,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\AgentLibrary\\AgentLibrary.csproj": {
+              "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\AgentLibrary\\AgentLibrary.csproj"
+            },
             "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
               "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj"
             }

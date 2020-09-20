@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AgentLibrary
 {
-    interface IAgent
+    public interface IAgent
     {
         public (int, int) GetNextMove(Board.Board board);
 

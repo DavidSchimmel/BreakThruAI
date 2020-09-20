@@ -7,8 +7,8 @@ namespace Board
     public class Board
     {
         private static char[] BOARD_ICONS = { '.', 'G', 'S', ' ', 'F' };
-        private static int[] DEFAULT_POSITION = {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-                                                 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0,
+        private static int[] DEFAULT_POSITION = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                                 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                  0, 1, 0, 0, 2, 2, 2, 0, 0, 1, 0,
                                                  0, 1, 0, 2, 0, 0, 0, 2, 0, 1, 0,
@@ -44,7 +44,7 @@ namespace Board
             this.remainingActions = 2;
         }
 
-        public void Move((int, int) move)
+        public int Move((int, int) move)
         {
             //debug query, remove this in the competetive Version
             if (!GetLegalMoves().Contains(move))
@@ -59,20 +59,23 @@ namespace Board
                 captures.AddLast((turnCounter, move.Item2, ((activePlayer + 1) % 2)));
             }
 
-            board[move.Item2] = board[move.Item1];
-            board[move.Item1] = 0;
-            turnCounter++;
-
-
             if (SetRemainingActions(move) == 0)
             {
                 activePlayer = (activePlayer + 1) % 2;
+                remainingActions = 2;
             }
+
+            turnCounter++;
+
+            board[move.Item2] = board[move.Item1];
+            board[move.Item1] = 0;
+
+            return activePlayer;
         }
 
         public int SetRemainingActions((int, int) move)
         {
-            if (move.Item2 != 0 || move.Item1 == 4)
+            if (board[move.Item2] != 0 || board[move.Item1] == 4)
             {
                 remainingActions--;
             }
@@ -123,9 +126,14 @@ namespace Board
 
                     if (remainingActions <= 1)
                     {
-                        var flagShipMoves = legalMoves.Where((move) => board[move.Item1] == 4);
+                        var flagShipMoves = legalMoves.Where((move) => board[move.Item1] == 4).ToList();
                         foreach ((int, int) flagShipMove in flagShipMoves) {
                             legalMoves.Remove(flagShipMove);
+                        }
+                        var lastMovedPieceMoves = legalMoves.Where((move) => move.Item1 == log.Last.Value.Item2).ToList();
+                        foreach ((int, int) lastMovedPieceMove in lastMovedPieceMoves)
+                        {
+                            legalMoves.Remove(lastMovedPieceMove);
                         }
                     }
                 }

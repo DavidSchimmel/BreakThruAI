@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AgentLibrary
 {
-    class RandomAgent : IAgent
+    public class RandomAgent : IAgent
     {
         public (int, int) GetNextMove(Board.Board board)
         {
@@ -12,6 +13,7 @@ namespace AgentLibrary
             var legalMoves = board.GetLegalMoves();
 
             int randomIndex = random.Next(legalMoves.Count);
+            return legalMoves.ToArray()[randomIndex];
             throw new NotImplementedException();
         }
     }

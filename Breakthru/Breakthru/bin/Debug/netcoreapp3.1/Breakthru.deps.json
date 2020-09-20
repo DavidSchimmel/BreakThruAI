@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v3.1": {
       "Breakthru/1.0.0": {
         "dependencies": {
+          "AgentLibrary": "1.0.0",
           "Board": "1.0.0"
         },
         "runtime": {
           "Breakthru.dll": {}
+        }
+      },
+      "AgentLibrary/1.0.0": {
+        "dependencies": {
+          "Board": "1.0.0"
+        },
+        "runtime": {
+          "AgentLibrary.dll": {}
         }
       },
       "Board/1.0.0": {
@@ -23,6 +32,11 @@
   },
   "libraries": {
     "Breakthru/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AgentLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
