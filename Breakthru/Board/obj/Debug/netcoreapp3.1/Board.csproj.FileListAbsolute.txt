@@ -14,4 +14,3 @@ C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.csproj.CoreCompileInputs.cache
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.dll
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.pdb
-C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Board\obj\Debug\netcoreapp3.1\Board.csprojAssemblyReference.cache

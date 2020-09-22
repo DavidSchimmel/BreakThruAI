@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace Board
 {
@@ -19,13 +21,13 @@ namespace Board
                                                  0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        int activePlayer;
-        int remainingActions;
-        int flagShipPos;
-        int turnCounter;
-        LinkedList<(int, int)> log;
-        LinkedList<(int, int, int)> captures; // turnnumber, position, player
-        Queue<(int, int, int)> moves = new Queue<(int, int, int)> ();
+        public int activePlayer;
+        public int remainingActions;
+        public int flagShipPos;
+        public int turnCounter;
+        public LinkedList<(int, int)> log;
+        public LinkedList<(int, int, int)> captures; // turnnumber, position, piece
+        public Queue<(int, int, int)> moves = new Queue<(int, int, int)> ();
 
         //int[] position;
         int[] board;
@@ -46,6 +48,12 @@ namespace Board
 
         public int Move((int, int) move)
         {
+            if (move == (-1, -1))
+            {
+                Undo();
+                return activePlayer;
+            }
+
             //debug query, remove this in the competetive Version
             if (!GetLegalMoves().Contains(move))
             {
@@ -56,7 +64,7 @@ namespace Board
 
             if(board[move.Item2] != 0)
             {
-                captures.AddLast((turnCounter, move.Item2, ((activePlayer + 1) % 2)));
+                captures.AddLast((turnCounter, move.Item2, board[move.Item2]));
             }
 
             if (SetRemainingActions(move) == 0)
@@ -73,6 +81,32 @@ namespace Board
             return activePlayer;
         }
 
+        public void Undo()
+        {
+            (int, int) lastMove = log.Last.Value;
+            (int, int, int) lastCapture = captures.Last.Value;
+            turnCounter--;
+
+            board[lastMove.Item1] = board[lastMove.Item2];
+            if (lastCapture.Item1 == turnCounter)
+            {
+                board[lastMove.Item2] = lastCapture.Item3;
+            }
+            // switch active player if other player has 2 actions remaining
+            if(remainingActions == 2)
+            {
+                activePlayer = (activePlayer + 1) % 2;
+            }
+            // if it was the other players first move, and the move to undo was neither the flagship move nor a capture, it is the players second move
+            if(remainingActions == 2 && board[lastMove.Item2] != 4 && board[lastMove.Item1] != board[lastMove.Item2])
+            {
+                remainingActions = 1;
+            }
+
+            log.RemoveLast();
+            captures.RemoveLast();
+        }
+
         public int SetRemainingActions((int, int) move)
         {
             if (board[move.Item2] != 0 || board[move.Item1] == 4)
@@ -82,6 +116,26 @@ namespace Board
             remainingActions--;
 
             return remainingActions;
+        }
+
+        public int CheckTerminalPosition()
+        {
+            for (int i = 0; i < board.Length; i++)
+            {
+                if (board[i] == 4)
+                {
+                    if ((int) (i/width) == 0 || (int)(i / width) == (height - 1) ||
+                        i % width == 0       || i % width == width -1)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+            return 1;
         }
 
         public bool Initialize(int[] initialPosition = null)
@@ -105,6 +159,11 @@ namespace Board
             {
                 return false;
             }   
+        }
+
+        public void SkipFirstTurn()
+        {
+            activePlayer = (activePlayer + 1) % 2;
         }
 
         public LinkedList<(int, int)> GetLegalMoves()
@@ -221,11 +280,6 @@ namespace Board
             return moveList;
         }
 
-        public bool CheckTerminalPosition()
-        {
-            return false;
-        }
-
         public string GetString()
         {
             string representation = "\r\n";
@@ -263,5 +317,28 @@ namespace Board
             Console.WriteLine(GetString());
         }
 
+        public string SerializeMove((int, int) move)
+        {
+            int xFro = move.Item1 % width;
+            int yFro = (int) (move.Item1 / width);
+            int xTo = move.Item2 % width;
+            int yTo = (int)(move.Item2 / width);
+
+            char xFroSerialized = (char) (xFro + 97);
+            char xToSerialized = (char)(xTo + 97);
+
+            return $"{xFroSerialized}{yFro}->{xToSerialized}{yTo}";
+        }
+
+        public void ParseMove(string moveString)
+        {
+            string fro = moveString.Split("->")[0];
+            string to = moveString.Split("->")[1];
+
+            Regex numberComponent = new Regex(@"^\d$");
+            Regex stringComponent = new Regex(@"^[a-zA-Z]+$");
+
+            string froFirstComp = stringComponent.Match(fro).Value;
+        }
     }
 }
