@@ -46,16 +46,23 @@ namespace Board
             this.remainingActions = 2;
         }
 
+        // returns the new active user
         public int Move((int, int) move)
         {
             if (move == (-1, -1))
             {
+                if (turnCounter == 0)
+                {
+                    PassTurn();
+                    return activePlayer;
+                }
                 Undo();
                 return activePlayer;
             }
 
             //debug query, remove this in the competetive Version
-            if (!GetLegalMoves().Contains(move))
+            var lmoves = GetLegalMoves();
+            if (!lmoves.Contains(move))
             {
                 throw new Exception("Attempted an illegal move!");
             }
@@ -84,27 +91,44 @@ namespace Board
         public void Undo()
         {
             (int, int) lastMove = log.Last.Value;
-            (int, int, int) lastCapture = captures.Last.Value;
             turnCounter--;
 
             board[lastMove.Item1] = board[lastMove.Item2];
-            if (lastCapture.Item1 == turnCounter)
+            board[lastMove.Item2] = 0;
+
+            if (captures.Count > 0)
             {
-                board[lastMove.Item2] = lastCapture.Item3;
+                (int, int, int) lastCapture = captures.Last.Value;
+                if (lastCapture.Item1 == turnCounter)
+                {
+                    board[lastMove.Item2] = lastCapture.Item3;
+                    captures.RemoveLast();
+                }
             }
-            // switch active player if other player has 2 actions remaining
+            // switch active player if other player has 2 actions remaining (must be done before calculating remaining turns)
             if(remainingActions == 2)
             {
                 activePlayer = (activePlayer + 1) % 2;
             }
             // if it was the other players first move, and the move to undo was neither the flagship move nor a capture, it is the players second move
-            if(remainingActions == 2 && board[lastMove.Item2] != 4 && board[lastMove.Item1] != board[lastMove.Item2])
+            if(remainingActions == 2 && board[lastMove.Item1] != 4 && board[lastMove.Item2] == 0)
             {
                 remainingActions = 1;
             }
+            else
+            {
+                remainingActions = 2;
+            }
 
             log.RemoveLast();
-            captures.RemoveLast();
+        }
+
+        public void PassTurn()
+        {
+            activePlayer = (activePlayer + 1) % 2;
+            turnCounter++;
+            remainingActions = 2;
+            // maybe log (-2, -2) or some indicator of a passed turn
         }
 
         public int SetRemainingActions((int, int) move)
@@ -175,7 +199,7 @@ namespace Board
                 if (board[tile] != 0 && board[tile] % 2 == activePlayer)
                 {
                     // check captures
-                    if (remainingActions >= 1)
+                    if (remainingActions > 1)
                     {
                         legalMoves = GetPossibleCaptures(legalMoves, tile);
                     }
@@ -186,6 +210,7 @@ namespace Board
                     if (remainingActions <= 1)
                     {
                         var flagShipMoves = legalMoves.Where((move) => board[move.Item1] == 4).ToList();
+                        
                         foreach ((int, int) flagShipMove in flagShipMoves) {
                             legalMoves.Remove(flagShipMove);
                         }
@@ -319,26 +344,37 @@ namespace Board
 
         public string SerializeMove((int, int) move)
         {
-            int xFro = move.Item1 % width;
+            int xFro = move.Item1 % width + 1;
             int yFro = (int) (move.Item1 / width);
-            int xTo = move.Item2 % width;
+            int xTo = move.Item2 % width + 1;
             int yTo = (int)(move.Item2 / width);
 
-            char xFroSerialized = (char) (xFro + 97);
-            char xToSerialized = (char)(xTo + 97);
+            char xFroSerialized = (char) (xFro + 96 + 1);
+            char xToSerialized = (char)(xTo + 96 + 1);
 
             return $"{xFroSerialized}{yFro}->{xToSerialized}{yTo}";
         }
 
-        public void ParseMove(string moveString)
+        public (int, int) ParseMove(string moveString)
         {
+            if (moveString.ToUpper() == "UNDO")
+            {
+                return (-1, -1);
+            }
             string fro = moveString.Split("->")[0];
             string to = moveString.Split("->")[1];
 
-            Regex numberComponent = new Regex(@"^\d$");
-            Regex stringComponent = new Regex(@"^[a-zA-Z]+$");
+            Regex numberComponent = new Regex(@"\d+");
+            Regex stringComponent = new Regex(@"[a-zA-Z]+");
 
-            string froFirstComp = stringComponent.Match(fro).Value;
+            int froXRead = ((int) stringComponent.Match(fro).Value.ToCharArray()[0]) - 96 - 1;
+            int froYRead = int.Parse(numberComponent.Match(fro).Value) - 1;
+            int toXRead = ((int) stringComponent.Match(to).Value.ToCharArray()[0]) - 96 - 1;
+            int toYRead = int.Parse(numberComponent.Match(to).Value) - 1;
+
+            int source = (froYRead) * width + (froXRead);
+            int target = (toYRead) * width + (toXRead);
+            return (source, target);
         }
     }
 }

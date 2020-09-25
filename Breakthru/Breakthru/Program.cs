@@ -14,8 +14,8 @@ namespace Breakthru
             board.Print();
 
             #region test
-            IAgent player0 = new RandomAgent();
-            IAgent player1 = new RandomAgent();
+            IAgent player0 = new ConsolePlayer();//RandomAgent();
+            IAgent player1 = new AlphaBetaStandard(2, new EvaluationMaterialBalance());
             IAgent[] players = new IAgent[2];
             players[0] = player0;
             players[1] = player1;
@@ -28,7 +28,7 @@ namespace Breakthru
                 board.Move(nextMove);
                 Console.WriteLine($"Next Move: {nextMove.Item1}->{nextMove.Item2}");
                 board.Print();
-                string test = Console.ReadLine();
+                player = board.activePlayer;
             }
 
             if (player == -1)

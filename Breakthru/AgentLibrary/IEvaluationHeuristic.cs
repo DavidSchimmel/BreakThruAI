@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AgentLibrary
 {
-    interface IEvaluationHeuristic
+    public interface IEvaluationHeuristic
     {
         public int Evaluate(Board.Board board, int searchingPlayer);
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AgentLibrary
 {
-    class MinimalEvaluationHeurisitc : IEvaluationHeuristic
+    public class EvaluationMinimal : IEvaluationHeuristic
     {
         public int Evaluate(Board.Board board, int searchingPlayer)
         {

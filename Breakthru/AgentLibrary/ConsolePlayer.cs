@@ -4,11 +4,22 @@ using System.Text;
 
 namespace AgentLibrary
 {
-    class ConsolePlayer : IAgent
+    public class ConsolePlayer : IAgent
     {
         public (int, int) GetNextMove(Board.Board board)
         {
-            Console.ReadLine(); 
+            string moveString = Console.ReadLine();
+
+            try
+            {
+                return board.ParseMove(moveString);
+            } 
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return (-1, -1);
         }
     }
 }
