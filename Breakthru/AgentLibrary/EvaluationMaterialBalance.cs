@@ -7,11 +7,11 @@ namespace AgentLibrary
     public class EvaluationMaterialBalance : IEvaluationHeuristic
     {
         private const int MATERIAL_BALANCE_WEIGHT = 50;
-        public int Evaluate(Board.Board board, int searchingPlayer)
+        public int Evaluate(Board.Board board, int evaluatingPlayer)
         {
             int score = 0;
             int winningPositionFor = board.CheckTerminalPosition();
-            int signum = searchingPlayer == 0 ? 1 : -1;
+            int signum = evaluatingPlayer == 0 ? 1 : -1;
 
             if (winningPositionFor == 0)
             {
@@ -46,7 +46,7 @@ namespace AgentLibrary
                     }
                 }
             }
-            return 0;
+            return value;
         }
     }
 }

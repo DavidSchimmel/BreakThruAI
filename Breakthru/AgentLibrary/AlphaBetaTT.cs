@@ -1,13 +1,10 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
-using System.Threading.Tasks.Sources;
 
 namespace AgentLibrary
 {
-    public class AlphaBetaStandard : IAgent
+    class AlphaBetaTT : IAgent
     {
         private int playerNumber;
         private IEvaluationHeuristic evaluationHeuristic;
@@ -15,7 +12,7 @@ namespace AgentLibrary
         public int depth = 4;
         Random random = new Random();
 
-        public AlphaBetaStandard(int playerNumber, IEvaluationHeuristic evaluationHeuristic)
+        public AlphaBetaTT(int playerNumber, IEvaluationHeuristic evaluationHeuristic)
         {
             this.playerNumber = playerNumber - 1;
             this.evaluationHeuristic = evaluationHeuristic;
@@ -62,7 +59,8 @@ namespace AgentLibrary
 
         private int AB(ref Board.Board board, int alpha, int beta, int depth) // maybe can implement minimal search window and deep pruning by giving alpha and beta as reference
         {
-            if (depth == 0 || board.CheckTerminalPosition() >= 0) {
+            if (depth == 0 || board.CheckTerminalPosition() >= 0)
+            {
                 return evaluationHeuristic.Evaluate(board, board.activePlayer) + random.Next(-randomRange, randomRange);
             }
 
@@ -78,7 +76,7 @@ namespace AgentLibrary
             foreach ((int, int) move in moves)
             {
                 board.Move(move);
-                
+
                 if (board.remainingActions <= 1)
                 {
                     value = AB(ref board, Math.Max(alpha, score), beta, depth - 1);
@@ -94,7 +92,7 @@ namespace AgentLibrary
                 }
 
                 board.Undo();
-             
+
                 if (score > beta)
                 {
                     break;

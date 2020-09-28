@@ -8,7 +8,7 @@ namespace Board
 {
     public class Board
     {
-        private static char[] BOARD_ICONS = { '.', 'G', 'S', ' ', 'F' };
+        private static char[] BOARD_ICONS = { '.', 'A', 'V', ' ', 'M' };
         private static int[] DEFAULT_POSITION = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                  0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -30,9 +30,9 @@ namespace Board
         public Queue<(int, int, int)> moves = new Queue<(int, int, int)> ();
 
         //int[] position;
-        int[] board;
-        int width;
-        int height;
+        public int[] board;
+        public int width;
+        public int height;
 
         public Board(int width, int height)
         {
