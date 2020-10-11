@@ -6,11 +6,22 @@ namespace AgentLibrary
 {
     public class WeightedEvaluation : IEvaluationHeuristic
     {
-        private const int GOLD_CAPTURES_WEIGHT = 150;
-        private const int SILVER_CAPTURES_WEIGHT = 200;
-        private const int SOUTH_BIAS_WEIGHT = 50;
-        private const int FLAGSHIP_LIBERTY_WEIGHT = 20;
-        private const int FLAFSHIP_LIBERTY_DEFAULT = 4;
+        private readonly int GOLD_CAPTURES_WEIGHT = 150;
+        private readonly int SILVER_CAPTURES_WEIGHT = 200;
+        private readonly int SOUTH_BIAS_WEIGHT = 50;
+        private readonly int FLAGSHIP_LIBERTY_WEIGHT = 20;
+        private readonly int FLAGSHIP_LIBERTY_DEFAULT = 4;
+
+        public WeightedEvaluation() { }
+
+        public WeightedEvaluation(int goldCapturesWeight, int silverCapturesWeight, int SouthBiasWeight, int flagshipLibertyWeight, int flagshipLibertyDefault)
+        {
+            GOLD_CAPTURES_WEIGHT = goldCapturesWeight;
+            SILVER_CAPTURES_WEIGHT = silverCapturesWeight;
+            SOUTH_BIAS_WEIGHT = SouthBiasWeight;
+            FLAGSHIP_LIBERTY_WEIGHT = flagshipLibertyWeight;
+            FLAGSHIP_LIBERTY_DEFAULT = flagshipLibertyDefault;
+        }
 
         public int Evaluate(Board.Board board, int evaluatingPlayer)
         {
@@ -119,7 +130,7 @@ namespace AgentLibrary
                     }
                 }
             }
-            return liberties - FLAFSHIP_LIBERTY_DEFAULT;
+            return liberties - FLAGSHIP_LIBERTY_DEFAULT;
         }
     }
 }

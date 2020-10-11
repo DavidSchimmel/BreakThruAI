@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Board
 {
@@ -84,6 +85,11 @@ namespace Board
 
             board[move.Item2] = board[move.Item1];
             board[move.Item1] = 0;
+
+            if (board[move.Item2] == 4)
+            {
+                flagShipPos = move.Item2;
+            }
 
             return activePlayer;
         }
@@ -185,6 +191,23 @@ namespace Board
             }   
         }
 
+        public void Replay(List<(int, int)> loggedMoves, bool showcase = false)
+        {
+            foreach((int, int) move in loggedMoves)
+            {
+                Move(move);
+                if (showcase)
+                {
+                    Console.WriteLine($"Move {SerializeMove(move)}");
+                    Console.WriteLine(GetString());
+                    Thread.Sleep(2000);
+                }
+            }
+            Console.WriteLine("Resume play");
+        }
+
+
+
         public void SkipFirstTurn()
         {
             activePlayer = (activePlayer + 1) % 2;
@@ -201,11 +224,11 @@ namespace Board
                     // check captures
                     if (remainingActions > 1)
                     {
-                        legalMoves = GetPossibleCaptures(legalMoves, tile);
+                        legalMoves = AddPossibleCaptures(legalMoves, tile);
                     }
 
                     // check moves
-                    legalMoves = GetPossibleMovements(legalMoves, tile);
+                    legalMoves = AddPossibleMovements(legalMoves, tile);
 
                     if (remainingActions <= 1)
                     {
@@ -230,7 +253,25 @@ namespace Board
             return legalMoves;
         }
 
-        public LinkedList<(int, int)> GetPossibleCaptures(LinkedList<(int, int)> moveList, int source)
+        public LinkedList<(int, int)> GetForcingMoves()
+        {
+            LinkedList<(int, int)> forcingMoves = new LinkedList<(int, int)>();
+
+            if (remainingActions > 1)
+            {
+                for (int tile = 0; tile < width * height; tile++)
+                {
+                    if (board[tile] != 0 && board[tile] % 2 == activePlayer)
+                    {
+                        forcingMoves = AddPossibleCaptures(forcingMoves, tile);
+                    }
+                }
+            }
+
+            return forcingMoves;
+        }
+
+        public LinkedList<(int, int)> AddPossibleCaptures(LinkedList<(int, int)> moveList, int source)
         {
             int upLeft = source - width - 1;
             int upRight = source - width + 1;
@@ -272,7 +313,7 @@ namespace Board
             return moveList;
         }
 
-        public LinkedList<(int, int)> GetPossibleMovements(LinkedList<(int, int)> moveList, int source)
+        public LinkedList<(int, int)> AddPossibleMovements(LinkedList<(int, int)> moveList, int source)
         {
             int target = source - 1;
             while (target >= ((int)(source / width) * width) && board[target] == 0)
@@ -309,14 +350,14 @@ namespace Board
         {
             string representation = "\r\n";
 
-            for (int i = width*(height-1); i >= 0; i -= width)
+            for (int i = width * (height - 1); i >= 0; i -= width)
             {
-                representation += $"{((i/width + 1)):00}|";
+                representation += $"{((i / width + 1)):00}|";
 
                 string rowString = "";
-                for (int j = 0; j<width; j++)
+                for (int j = 0; j < width; j++)
                 {
-                    rowString += board[i+j];
+                    rowString += board[i + j] + " ";
                 }
 
                 rowString = rowString.Replace('0', BOARD_ICONS[0]).Replace('1', BOARD_ICONS[1]).Replace('2', BOARD_ICONS[2]).Replace('4', BOARD_ICONS[4]);
@@ -333,6 +374,7 @@ namespace Board
             for (int i = 0; i < width; i++)
             {
                 representation += Convert.ToChar(i + 97);
+                representation += " ";
             }
 
             return representation;
@@ -345,12 +387,12 @@ namespace Board
         public string SerializeMove((int, int) move)
         {
             int xFro = move.Item1 % width + 1;
-            int yFro = (int) (move.Item1 / width);
+            int yFro = ((int) (move.Item1 / width)) + 1;
             int xTo = move.Item2 % width + 1;
-            int yTo = (int)(move.Item2 / width);
+            int yTo = ((int)(move.Item2 / width)) + 1;
 
-            char xFroSerialized = (char) (xFro + 96 + 1);
-            char xToSerialized = (char)(xTo + 96 + 1);
+            char xFroSerialized = (char) (xFro + 96);
+            char xToSerialized = (char)(xTo + 96);
 
             return $"{xFroSerialized}{yFro}->{xToSerialized}{yTo}";
         }
@@ -375,6 +417,22 @@ namespace Board
             int source = (froYRead) * width + (froXRead);
             int target = (toYRead) * width + (toXRead);
             return (source, target);
+        }
+
+        public List<(int, int)> ParseLog(string logString)
+        {
+            List<(int, int)> moveList = new List<(int, int)>();
+            string[] moveStrings = logString.Split("\r\n");
+            foreach (string moveString in moveStrings)
+            {
+                if (string.IsNullOrEmpty(moveString))
+                {
+                    continue;
+                }
+                (int, int) move = this.ParseMove(moveString);
+                moveList.Add(move);
+            }
+            return moveList;
         }
     }
 }
