@@ -1,0 +1,12 @@
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\bin\Release\netcoreapp3.1\AgentLibrary.deps.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\bin\Release\netcoreapp3.1\AgentLibrary.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\bin\Release\netcoreapp3.1\AgentLibrary.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\bin\Release\netcoreapp3.1\Board.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\bin\Release\netcoreapp3.1\Board.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.csprojAssemblyReference.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.AssemblyInfoInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.AssemblyInfo.cs
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.csproj.CoreCompileInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.csproj.CopyComplete
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\AgentLibrary\obj\Release\netcoreapp3.1\AgentLibrary.pdb

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj": {}
+    "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
+    "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
+        "projectUniqueName": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
         "projectName": "Board",
-        "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
-        "packagesPath": "C:\\Users\\homie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\obj\\",
+        "projectPath": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\Board\\Board.csproj",
+        "packagesPath": "C:\\Users\\David Schimmel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\Board\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\homie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David Schimmel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,24 +55,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj": {
+    "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj",
-        "packagesPath": "C:\\Users\\homie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\GUI\\obj\\",
+        "projectPath": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\GUI\\GUI.csproj",
+        "packagesPath": "C:\\Users\\David Schimmel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\GUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\homie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David Schimmel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
-                "projectPath": "C:\\Users\\homie\\Desktop\\UMREPOS\\BreakThruAI\\Breakthru\\Board\\Board.csproj"
+              "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\Board\\Board.csproj": {
+                "projectPath": "C:\\Users\\David Schimmel\\Desktop\\game1\\BreakThruAI\\Breakthru\\Board\\Board.csproj"
               }
             }
           }
@@ -117,7 +117,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

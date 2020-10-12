@@ -1,0 +1,13 @@
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\bin\Release\netcoreapp3.1\Game.exe
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\bin\Release\netcoreapp3.1\Game.deps.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\bin\Release\netcoreapp3.1\Game.runtimeconfig.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\bin\Release\netcoreapp3.1\Game.runtimeconfig.dev.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\bin\Release\netcoreapp3.1\Game.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\bin\Release\netcoreapp3.1\Game.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.AssemblyInfoInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.AssemblyInfo.cs
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.csproj.CoreCompileInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.genruntimeconfig.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Game\obj\Release\netcoreapp3.1\Game.csprojAssemblyReference.cache

@@ -16,3 +16,21 @@ C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.dll
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.pdb
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.genruntimeconfig.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\GUI.exe
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\GUI.deps.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\GUI.runtimeconfig.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\GUI.runtimeconfig.dev.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\GUI.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\GUI.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\Board.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\bin\Debug\netcoreapp3.1\Board.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.csprojAssemblyReference.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.Form1.resources
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.csproj.GenerateResource.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.AssemblyInfoInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.AssemblyInfo.cs
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.csproj.CoreCompileInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.csproj.CopyComplete
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\GUI\obj\Debug\netcoreapp3.1\GUI.genruntimeconfig.cache

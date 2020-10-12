@@ -1,0 +1,9 @@
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\bin\Release\netcoreapp3.1\Board.deps.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\bin\Release\netcoreapp3.1\Board.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\bin\Release\netcoreapp3.1\Board.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.AssemblyInfoInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.AssemblyInfo.cs
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.csproj.CoreCompileInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.csprojAssemblyReference.cache

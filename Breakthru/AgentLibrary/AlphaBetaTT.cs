@@ -83,6 +83,11 @@ namespace AgentLibrary
         {
             if (depth == 0)
             {
+                if (board.CheckTerminalPosition() >= 0)
+                {
+                    return evaluationHeuristic.Evaluate(board, board.activePlayer) + random.Next(-randomRange, randomRange);
+                }
+
                 //selective deepening in case of captures, might want to extend to other more or less forcing moves ("check", looming escpae) 
                 // right now seems to slow down the calculations considerably, if tt doesnt help, might consider also to simplify it to only search recapturing sequences
                 if (board.captures.Count > 0 && board.captures.Last.Value.Item1 == (board.turnCounter - 1))

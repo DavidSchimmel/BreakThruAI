@@ -32,3 +32,21 @@ C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcore
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.genruntimeconfig.cache
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\AgentLibrary.dll
 C:\Users\homie\Desktop\UMREPOS\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\AgentLibrary.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.exe
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.deps.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.runtimeconfig.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.runtimeconfig.dev.json
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Breakthru.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\AgentLibrary.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Board.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\AgentLibrary.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\bin\Debug\netcoreapp3.1\Board.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.csprojAssemblyReference.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.AssemblyInfoInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.AssemblyInfo.cs
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.csproj.CoreCompileInputs.cache
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.csproj.CopyComplete
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.dll
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.pdb
+C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Breakthru\obj\Debug\netcoreapp3.1\Breakthru.genruntimeconfig.cache

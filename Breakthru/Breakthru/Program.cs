@@ -20,7 +20,7 @@ namespace Breakthru
 {
     class Program
     {
-        private const string DEFAULT_LOG_PATH = @"C:\Users\homie\Desktop\GameLogs\gamelog.txt";
+        private const string DEFAULT_LOG_PATH = @"C:\Users\David Schimmel\Desktop\game1\logs\gamelog.txt";
 
         static void Main(string[] args)
         {
