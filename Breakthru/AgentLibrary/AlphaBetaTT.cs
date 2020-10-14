@@ -6,6 +6,8 @@ namespace AgentLibrary
 {
     public class AlphaBetaTT : IAgent
     {
+        private readonly long _zobristKeyLength = (long)Math.Pow(10, 12);
+
         private int playerNumber;
         private IEvaluationHeuristic evaluationHeuristic;
         private const int randomRange = 50;
@@ -13,10 +15,37 @@ namespace AgentLibrary
         public int depth = 4;
         Random random = new Random();
 
-        public AlphaBetaTT(int playerNumber, IEvaluationHeuristic evaluationHeuristic)
+        Dictionary<int, long> ttKeys;
+        Dictionary<long, (int, (int, int), int, int, int)> tt; // checksum, move, value, flag (0:=exact, 1:=lower, 2:=upper), search depth
+        long zobristHash;
+
+        public AlphaBetaTT(int playerNumber, Board.Board initialBoard, IEvaluationHeuristic evaluationHeuristic)
         {
             this.playerNumber = playerNumber - 1;
             this.evaluationHeuristic = evaluationHeuristic;
+            InitTTKeys(initialBoard);
+            tt = new Dictionary<long, (int, (int, int), int, int, int)>();
+        }
+
+        public void InitTTKeys(Board.Board board)
+        {
+            ttKeys = new Dictionary<int, long>();
+            zobristHash = 0;
+
+            for (int i = 0; i < board.width * board.height; i++)
+            {
+                ttKeys[i + board.width * board.height * 0] = (long)((random.NextDouble() * 2.0 - 1.0) * long.MaxValue);
+                ttKeys[i + board.width * board.height * 1] = (long)((random.NextDouble() * 2.0 - 1.0) * long.MaxValue);
+                ttKeys[i + board.width * board.height * 2] = (long)((random.NextDouble() * 2.0 - 1.0) * long.MaxValue);
+                ttKeys[i + board.width * board.height * 4] = (long)((random.NextDouble() * 2.0 - 1.0) * long.MaxValue);
+                zobristHash = zobristHash ^ ttKeys[i + board.width * board.height * board.board[i]];
+            }
+        }
+
+        public void Rehash(Board.Board board, (int, int) move)
+        {
+            zobristHash = zobristHash ^ (move.Item1 + board.width * board.height * board.board[move.Item1]);
+            zobristHash = zobristHash ^ (move.Item2 + board.width * board.height * board.board[move.Item2]);
         }
 
         public (int, int) GetNextMove(Board.Board board)
@@ -38,6 +67,7 @@ namespace AgentLibrary
             foreach ((int, int) move in moves)
             {
                 board.Move(move);
+                Rehash(board, move);
 
                 if (board.remainingActions <= 1)
                 {
@@ -55,6 +85,7 @@ namespace AgentLibrary
                 }
 
                 board.Undo();
+                Rehash(board, move);
 
                 if (score > beta)
                 {
@@ -76,13 +107,52 @@ namespace AgentLibrary
                 depth = 2;
             }
 
+            Console.WriteLine($"player {board.activePlayer}");
+            Console.WriteLine($"score {score}");
+
             return selectedMove;
         }
 
-        private int AB(ref Board.Board board, int alpha, int beta, int depth) // maybe can implement minimal search window and deep pruning by giving alpha and beta as reference
+        private int AB(ref Board.Board board, int alpha, int beta, int depth) 
         {
+            (int, (int, int), int, int, int) storedMove;
+            int oldAlpha = alpha;
+            (int, int) bestMove = (-1, -1);
+
+            if (tt.TryGetValue(zobristHash % _zobristKeyLength, out storedMove))
+            {
+                int checksum = (int)(zobristHash / _zobristKeyLength);
+                if (checksum == storedMove.Item1)
+                {
+                    if (storedMove.Item5 > depth && storedMove.Item4 == 0)
+                    {
+                        return storedMove.Item3;
+                    }
+                    else if (storedMove.Item5 > depth && storedMove.Item4 == 1) // lower bound
+                    {
+                        alpha = Math.Max(storedMove.Item3, alpha);
+                    }
+                    else if (storedMove.Item5 > depth && storedMove.Item4 == 2) // upper bound
+                    {
+                        beta = Math.Min(storedMove.Item3, beta);
+                    }
+                    if (alpha >= beta)
+                    {
+                        return storedMove.Item3;
+                    }
+
+                    bestMove = storedMove.Item2;
+                }
+            }
+
+            if (board.CheckTerminalPosition() >= 0)
+            {
+                return evaluationHeuristic.Evaluate(board, board.activePlayer) + random.Next(-randomRange, randomRange);
+            }
+
             if (depth == 0)
             {
+                #region quiescence search
                 //selective deepening in case of captures, might want to extend to other more or less forcing moves ("check", looming escpae) 
                 // right now seems to slow down the calculations considerably, if tt doesnt help, might consider also to simplify it to only search recapturing sequences
                 if (board.captures.Count > 0 && board.captures.Last.Value.Item1 == (board.turnCounter - 1))
@@ -95,6 +165,7 @@ namespace AgentLibrary
                     foreach ((int, int) move in forcingMoves)
                     {
                         board.Move(move);
+                        Rehash(board, move);
 
                         if (board.remainingActions <= 1)
                         {
@@ -111,21 +182,17 @@ namespace AgentLibrary
                         }
 
                         board.Undo();
+                        Rehash(board, move);
 
                         if (selectScore > beta)
                         {
                             break;
                         }
-
                     }
                     return selectScore;
                 }
+                #endregion quiescence search
 
-                return evaluationHeuristic.Evaluate(board, board.activePlayer) + random.Next(-randomRange, randomRange);
-            }
-
-            if (depth == 0 || board.CheckTerminalPosition() >= 0)
-            {
                 return evaluationHeuristic.Evaluate(board, board.activePlayer) + random.Next(-randomRange, randomRange);
             }
 
@@ -138,9 +205,11 @@ namespace AgentLibrary
             int score = int.MinValue / 2;
             int value = score;
 
+
             foreach ((int, int) move in moves)
             {
                 board.Move(move);
+                Rehash(board, move);
 
                 if (board.remainingActions <= 1)
                 {
@@ -154,16 +223,30 @@ namespace AgentLibrary
                 if (value > score)
                 {
                     score = value;
+                    bestMove = move;
                 }
 
                 board.Undo();
+                Rehash(board, move);
 
                 if (score > beta)
                 {
                     break;
                 }
-
             }
+            #region TT assignment
+            int flag = 0;
+            if (score <= oldAlpha)
+            {
+                flag = 2;
+            }
+            else if (score >= beta)
+            {
+                flag = 1;
+            }
+            tt[zobristHash % _zobristKeyLength] = (((int) (zobristHash / _zobristKeyLength)), bestMove, score, flag, depth);
+            #endregion
+
             return score;
         }
     }

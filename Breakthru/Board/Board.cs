@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
@@ -30,7 +31,6 @@ namespace Board
         public LinkedList<(int, int, int)> captures; // turnnumber, position, piece
         public Queue<(int, int, int)> moves = new Queue<(int, int, int)> ();
 
-        //int[] position;
         public int[] board;
         public int width;
         public int height;
@@ -357,7 +357,13 @@ namespace Board
                 string rowString = "";
                 for (int j = 0; j < width; j++)
                 {
-                    rowString += board[i + j] + " ";
+                    if (log.Count > 0 && (i + j) == log.Last.Value.Item1)
+                    {
+                        rowString += "x ";
+                    } else
+                    {
+                        rowString += board[i + j] + " ";
+                    }
                 }
 
                 rowString = rowString.Replace('0', BOARD_ICONS[0]).Replace('1', BOARD_ICONS[1]).Replace('2', BOARD_ICONS[2]).Replace('4', BOARD_ICONS[4]);

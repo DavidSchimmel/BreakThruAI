@@ -29,8 +29,8 @@ namespace Breakthru
             board.Print();
 
             #region test
-            IAgent player0 = new ConsolePlayer();//AlphaBetaTT(1, new WeightedEvaluation(200, 150, 70, 20, 4));//WeightedEvaluation());//ConsolePlayer();//RandomAgent();
-            IAgent player1 = new AlphaBetaTT(2, new WeightedEvaluation(150, 200, 50, 20, 4));//EvaluationMaterialBalance());
+            IAgent player0 = new AlphaBetaTT(1, board, new WeightedEvaluation(200, 150, 70, 20, 4));//WeightedEvaluation());//ConsolePlayer();//RandomAgent();
+            IAgent player1 = new AlphaBetaTT(2, board, new WeightedEvaluation(150, 200, 50, 20, 4));//EvaluationMaterialBalance());
             IAgent[] players = new IAgent[2];
             players[0] = player0;
             players[1] = player1;

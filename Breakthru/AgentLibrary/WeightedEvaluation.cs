@@ -31,11 +31,11 @@ namespace AgentLibrary
 
             if (winningPositionFor == 0)
             {
-                score += 1000;
+                return (10000 * signum);
             }
             if (winningPositionFor == 1)
             {
-                score -= 1000;
+                return (-10000 * signum);
             }
             score = score * signum;
 
