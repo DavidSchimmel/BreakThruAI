@@ -29,8 +29,8 @@ namespace Breakthru
             board.Print();
 
             #region test
-            IAgent player0 = new ConsolePlayer();//AlphaBetaTT(1, new WeightedEvaluation(200, 150, 70, 20, 4));//WeightedEvaluation());//ConsolePlayer();//RandomAgent();
-            IAgent player1 = new AlphaBetaTT(2, new WeightedEvaluation(150, 200, 50, 20, 4));//EvaluationMaterialBalance());
+            IAgent player0 = new AlphaBetaTT(2, board, new WeightedEvaluation(200, 150, 70, 20, 4));//new AlphaBetaQS(1, new WeightedEvaluation(200, 150, 70, 20, 4));//WeightedEvaluation());//ConsolePlayer();//RandomAgent();
+            IAgent player1 = new AlphaBetaQS(2, new WeightedEvaluation(150, 200, 50, 20, 4));//new AlphaBetaTT(2, board, new WeightedEvaluation(150, 200, 50, 20, 4));//AlphaBetaTT(2, new WeightedEvaluation(150, 200, 50, 20, 4));//EvaluationMaterialBalance());
             IAgent[] players = new IAgent[2];
             players[0] = player0;
             players[1] = player1;
@@ -58,7 +58,18 @@ namespace Breakthru
             {
                 (int, int) nextMove = players[player].GetNextMove(board);
                 board.Move(nextMove);
-                Console.WriteLine($"Next Move: {board.SerializeMove(board.log.Last.Value)}");
+                if (board.log.Count > 0)
+                {
+                    Console.WriteLine($"Next Move: {board.SerializeMove(board.log.Last.Value)}");
+                } else
+                {
+                    Console.WriteLine("No move");
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(DEFAULT_LOG_PATH, true))
+                    {
+                        file.WriteLine("pass");
+                    }
+                }
+                
                 board.Print();
                 player = board.activePlayer;
 

@@ -10,6 +10,7 @@ namespace Board
     public class Board
     {
         private static char[] BOARD_ICONS = { '.', 'A', 'V', ' ', 'M' };
+
         private static int[] DEFAULT_POSITION = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                  0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -62,11 +63,13 @@ namespace Board
             }
 
             //debug query, remove this in the competetive Version
+#if Debug
             var lmoves = GetLegalMoves();
             if (!lmoves.Contains(move))
             {
                 throw new Exception("Attempted an illegal move!");
             }
+#endif
 
             log.AddLast(move);
 
@@ -134,7 +137,17 @@ namespace Board
             activePlayer = (activePlayer + 1) % 2;
             turnCounter++;
             remainingActions = 2;
+            log.AddLast((1, 1));
             // maybe log (-2, -2) or some indicator of a passed turn
+        }
+
+        public void Noop(int remainingActionsTarget = 0)
+        {
+            activePlayer = (activePlayer + 1) % 2;
+            if (remainingActionsTarget > 0)
+            {
+                remainingActions = remainingActionsTarget;
+            }
         }
 
         public int SetRemainingActions((int, int) move)
@@ -419,6 +432,10 @@ namespace Board
             {
                 Undo();
                 Undo();
+                return (-1, -1);
+            }
+            if (moveString.ToUpper() == "PASS")
+            {
                 return (-1, -1);
             }
             string fro = moveString.Split("->")[0];
