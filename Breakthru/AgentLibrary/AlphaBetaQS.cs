@@ -13,10 +13,11 @@ namespace AgentLibrary
         public int depth = 4;
         Random random = new Random();
 
-        public AlphaBetaQS(int playerNumber, IEvaluationHeuristic evaluationHeuristic)
+        public AlphaBetaQS(int playerNumber, IEvaluationHeuristic evaluationHeuristic, int depth = 4)
         {
             this.playerNumber = playerNumber - 1;
             this.evaluationHeuristic = evaluationHeuristic;
+            this.depth = depth;
         }
 
         public (int, int) GetNextMove(Board.Board board)

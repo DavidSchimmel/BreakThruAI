@@ -20,7 +20,7 @@ namespace Breakthru
 {
     class Program
     {
-        private const string DEFAULT_LOG_PATH = @"C:\Users\David Schimmel\Desktop\game1\logs\gamelog.txt";
+        //private const string DEFAULT_LOG_PATH = @"C:\gamelog.txt";
 
         static void Main(string[] args)
         {
@@ -29,29 +29,35 @@ namespace Breakthru
             board.Print();
 
             #region test
-            IAgent player0 = new AlphaBetaTT(2, board, new WeightedEvaluation(200, 150, 70, 20, 4));//new AlphaBetaQS(1, new WeightedEvaluation(200, 150, 70, 20, 4));//WeightedEvaluation());//ConsolePlayer();//RandomAgent();
+            /*IAgent player0 = new AlphaBetaTT(2, board, new WeightedEvaluation(200, 150, 70, 20, 4));//new AlphaBetaQS(1, new WeightedEvaluation(200, 150, 70, 20, 4));//WeightedEvaluation());//ConsolePlayer();//RandomAgent();
             IAgent player1 = new AlphaBetaQS(2, new WeightedEvaluation(150, 200, 50, 20, 4));//new AlphaBetaTT(2, board, new WeightedEvaluation(150, 200, 50, 20, 4));//AlphaBetaTT(2, new WeightedEvaluation(150, 200, 50, 20, 4));//EvaluationMaterialBalance());
+            */
+            #endregion test 
+ 
+            IAgent player0 = ChooseAgent(0);
+            IAgent player1 = ChooseAgent(1);
+            
             IAgent[] players = new IAgent[2];
             players[0] = player0;
             players[1] = player1;
-            #endregion test 
+
 
             #region replay
-            if (false)
+            /*if (false)
             {
                 ReplayLog(DEFAULT_LOG_PATH, board, true);
 
                 Environment.Exit(0);
-            }
+            }*/
             #endregion
 
             int player = 0;
 
             #region restore position from log
-            if (false)
+            /*if (false)
             {
                 ReplayLog(DEFAULT_LOG_PATH, board, false);
-            }
+            }*/
             #endregion
 
             while (player == 0 || player == 1)
@@ -64,19 +70,19 @@ namespace Breakthru
                 } else
                 {
                     Console.WriteLine("No move");
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(DEFAULT_LOG_PATH, true))
+                    /*using (System.IO.StreamWriter file = new System.IO.StreamWriter(DEFAULT_LOG_PATH, true))
                     {
                         file.WriteLine("pass");
-                    }
+                    }*/
                 }
                 
                 board.Print();
                 player = board.activePlayer;
 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(DEFAULT_LOG_PATH, true))
+                /*using (System.IO.StreamWriter file = new System.IO.StreamWriter(DEFAULT_LOG_PATH, true))
                 {
                     file.WriteLine($"{board.SerializeMove(nextMove)}");
-                }
+                }*/
 
                 if (board.CheckTerminalPosition() == 0)
                 {
@@ -120,6 +126,43 @@ namespace Breakthru
             {
                 Console.WriteLine("Recreading board position failed");
             }
+        }
+
+        static public IAgent ChooseAgent(int player)
+        {
+            string playerName = player == 0 ? "gold" : "silver";
+            IEvaluationHeuristic evaluationHeuristic = player == 0 ? new WeightedEvaluation(200, 150, 70, 20, 4) : new WeightedEvaluation(150, 200, 50, 20, 4); 
+            Console.WriteLine($"Choose agent for {playerName} player!");
+            Console.WriteLine("QS for the tournament agent.");
+            Console.WriteLine("NM for the null move forward pruning agent.");
+            Console.WriteLine("TT for the transposition table agent.");
+            Console.WriteLine("RANDOM for random agent");
+            Console.WriteLine("Anything else for human agent");
+            string selection = Console.ReadLine().Trim().ToUpper();
+            IAgent agent;
+
+            if (selection == "QS")
+            {
+                agent = new AlphaBetaQS(player, evaluationHeuristic, 4);
+            }
+            else if (selection == "NM")
+            {
+                agent = new AlphaBetaMSWNM(player, evaluationHeuristic, 4);
+            }
+            else if (selection == "TT")
+            {
+                agent = new AlphaBetaQS(player, evaluationHeuristic, 5);
+            }
+            else if (selection == "RANDOM")
+            {
+                agent = new RandomAgent();
+            }
+            else
+            {
+                agent = new ConsolePlayer();
+            }
+
+            return agent;
         }
     }
 }

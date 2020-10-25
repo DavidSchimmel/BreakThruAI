@@ -6,4 +6,3 @@ C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\ne
 C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.csproj.CoreCompileInputs.cache
 C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.dll
 C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.pdb
-C:\Users\David Schimmel\Desktop\game1\BreakThruAI\Breakthru\Board\obj\Release\netcoreapp3.1\Board.csprojAssemblyReference.cache

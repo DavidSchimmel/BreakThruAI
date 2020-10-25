@@ -18,16 +18,15 @@ namespace AgentLibrary
         Random random = new Random();
 
         Dictionary<int, ulong> ttKeys;
-        //Dictionary<ulong, (int, (int, int), int, int, int)> tt; // checksum, move, value, flag (0:=exact, 1:=lower, 2:=upper), search depth
         (int, (int, int), int, int, int)[] tt2;
         ulong zobristHash;
 
-        public AlphaBetaTT(int playerNumber, Board.Board initialBoard, IEvaluationHeuristic evaluationHeuristic)
+        public AlphaBetaTT(int playerNumber, Board.Board initialBoard, IEvaluationHeuristic evaluationHeuristic, int depth = 4)
         {
             this.playerNumber = playerNumber - 1;
             this.evaluationHeuristic = evaluationHeuristic;
+            this.depth = depth;
             InitTTKeys(initialBoard);
-            //tt = new Dictionary<ulong, (int, (int, int), int, int, int)>();
             tt2 = new (int, (int, int), int, int, int)[(int) Math.Pow(2, 28)];
         }
 
@@ -119,7 +118,6 @@ namespace AgentLibrary
             int oldAlpha = alpha;
             (int, int) bestMove = (-1, -1);
 
-            //if (tt.TryGetValue(zobristHash % _zobristKeyLength, out storedMove))
             if (tt2[zobristHash % _zobristKeyLength] != (0, (0, 0), 0, 0, 0))
             {
                 storedMove = tt2[zobristHash % _zobristKeyLength];

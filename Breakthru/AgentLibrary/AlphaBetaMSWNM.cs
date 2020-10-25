@@ -142,7 +142,7 @@ namespace AgentLibrary
             {
                 int remainingActions = board.remainingActions;
                 board.Noop();
-                int lowerBound = -AB(ref board, -1 * beta, -1 * Math.Max(alpha, score), depth - 1);
+                int lowerBound = -AB(ref board, -1 * beta, -1 * Math.Max(alpha, score), 1);
                 board.Noop(remainingActions);
                 if (lowerBound > -9000 && lowerBound < 9000)
                 {
